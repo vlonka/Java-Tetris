@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  *
  * @author vlonka
  */
-public class PeliTest { // Jotain haikkaa, mikkan testi ei toimi, en tajua miksi.
+public class PeliTest { // Jotain haikkaa, mikaan testi ei toimi, en tajua miksi.
     
     Peli pelaus;
 
