@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javalabratetris.javalabratetris;
+package tetris.logiikka;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Ruudukko {
     public Ruudukko() {
         this.ruudut = new Ruutu[23][10];
     }
-    
+
     public void taytaRuutu(int y, int x) {
         Ruutu tayte = new Ruutu();
         ruudut[y][x] = tayte;
@@ -27,5 +27,20 @@ public class Ruudukko {
             return true;
         }
         return false;
+    }
+
+    public boolean onkoRiviTaynna(int y) {
+        for (int x = 0; x <= 9; x++) {
+            if (!this.onkoTaynna(y, x)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public void tyhjennaRivi(int y) {
+        for (int x = 0; x <= 9; x++) {
+            ruudut[y][x] = null;
+        }
     }
 }

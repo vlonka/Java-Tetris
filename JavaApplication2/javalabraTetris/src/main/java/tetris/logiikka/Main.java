@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javalabratetris.javalabratetris;
+package tetris.logiikka;
 
 /**
  *
@@ -17,19 +17,21 @@ public class Main {
     public static void main(String[] args) {
 
         Peli pelaus = new Peli();        // testikoodia
-        
+
         pelaus.putoa();
-        
+        for (int i = 0; i < 10; i++) {
+            pelaus.liikuVasemmalle();
+        }
+
         System.out.println(pelaus.toString());
         System.out.println("");
 
         pelaus.taytaRuutu(2, 3);
         pelaus.taytaRuutu(9, 6);
         pelaus.taytaRuutu(9, 4);
-        pelaus.taytaRuutu(17, 7);
+        pelaus.taytaRuutu(17, 5);
 
-        pelaus.liikuOikealle();         // liikkuminen ei tuota haluttua tulosta
-
+        //pelaus.liikuOikealle();         // liikkuminen ei tuota haluttua tulosta
         for (int i = 0; i <= 80; i++) {
             pelaus.putoa();
         }

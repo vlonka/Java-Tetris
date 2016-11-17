@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javalabratetris.javalabratetris;
+package tetris.logiikka;
 
 /**
  *
  * @author vlonka
  */
-public class Palikka {
+public class Nelio {
     
     private int korkeus;
     private int leveys;
     
-    public Palikka(int korkeus, int leveys) {
+    public Nelio(int korkeus, int leveys) {
         this.korkeus = korkeus;
         this.leveys = leveys;
     }

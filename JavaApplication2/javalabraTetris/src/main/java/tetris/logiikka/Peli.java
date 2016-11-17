@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javalabratetris.javalabratetris;
+package tetris.logiikka;
 
 /**
  *
@@ -12,11 +12,11 @@ package javalabratetris.javalabratetris;
 public class Peli {
 
     private Ruudukko pelialue;
-    private Palikka pala;
+    private Nelio pala;
 
     public Peli() {
         this.pelialue = new Ruudukko();
-        this.pala = new Palikka(1, 5);
+        this.pala = new Nelio(1, 5);
     }
 
     public void taytaRuutu(int y, int x) {
@@ -48,7 +48,7 @@ public class Peli {
         int x = pala.getLeveys();
 
         if (x != 9) {
-            if (onkoTaynna(y, x + 1)) {
+            if (!onkoTaynna(y, x + 1)) {
                 pala.setLeveys(x + 1);
             }
         }
@@ -59,8 +59,8 @@ public class Peli {
         int y = pala.getKorkeus();
         int x = pala.getLeveys();
 
-        if (y != 0) {
-            if (onkoTaynna(y, x - 1)) {
+        if (x != 0) {
+            if (!onkoTaynna(y, x - 1)) {
                 pala.setLeveys(x - 1);
             }
         }
