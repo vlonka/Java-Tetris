@@ -5,4 +5,5 @@ Päivä | Tunnit | Kuvaus
 10.11.2016 | 3h | Perustoimintojen koodausta
 11.11.2016 | 4h | Ihme sekoilua, testien, toimintojen ja luokkakaavioiden tekoa, PIT ja checkstyle-säätöä.
 15.11.2016 | 2.5h | Testien säätöä.
+17.11.2016 | 4h | Koodausta.
 ... | ... | ...
