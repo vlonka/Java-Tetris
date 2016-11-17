@@ -26,12 +26,15 @@ public class Main {
         System.out.println(pelaus.toString());
         System.out.println("");
 
-        pelaus.taytaRuutu(2, 3);
-        pelaus.taytaRuutu(9, 6);
-        pelaus.taytaRuutu(9, 4);
-        pelaus.taytaRuutu(17, 5);
+        pelaus.getPelialue().taytaRuutu(2, 3);
+        pelaus.getPelialue().taytaRuutu(9, 6);
+        pelaus.getPelialue().taytaRuutu(9, 4);
+        pelaus.getPelialue().taytaRuutu(17, 5);
+        
+        pelaus.getPelialue().tyhjennaRivi(2);
+        pelaus.getPelialue().tyhjennaRivi(3);
+        pelaus.getPelialue().pudotaRuudut(11);
 
-        //pelaus.liikuOikealle();         // liikkuminen ei tuota haluttua tulosta
         for (int i = 0; i <= 80; i++) {
             pelaus.putoa();
         }
@@ -42,7 +45,7 @@ public class Main {
                 System.out.print(y + " ");
             }
             for (int x = 0; x <= 9; x++) {
-                if (pelaus.onkoTaynna(y, x)) {
+                if (pelaus.getPelialue().onkoTaynna(y, x)) {
                     System.out.print("X");
                 } else {
                     System.out.print("O");

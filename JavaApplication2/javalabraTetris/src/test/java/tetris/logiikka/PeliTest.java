@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  *
  * @author vlonka
  */
-public class PeliTest { // Jotain haikkaa, mikaan testi ei toimi, en tajua miksi.
+public class PeliTest {
     
     Peli pelaus;
 
@@ -48,12 +48,12 @@ public class PeliTest { // Jotain haikkaa, mikaan testi ei toimi, en tajua miksi
     
     @Test
     public void ruutuunPutoaminen() {
-        pelaus.taytaRuutu(3, 5);
+        pelaus.getPelialue().taytaRuutu(3, 5);
         for (int i = 0; i < 2; i++) {
             pelaus.putoa();
         }
         assertEquals("1, 5", pelaus.toString());
-        assertEquals(true, pelaus.onkoTaynna(2, 5));
+        assertEquals(true, pelaus.getPelialue().onkoTaynna(2, 5));
     }
     
     @Test
@@ -70,14 +70,14 @@ public class PeliTest { // Jotain haikkaa, mikaan testi ei toimi, en tajua miksi
     
     @Test
     public void ruutuLiikeVasen() {
-        pelaus.taytaRuutu(1, 4);
+        pelaus.getPelialue().taytaRuutu(1, 4);
         pelaus.liikuVasemmalle();
         assertEquals("1, 5", pelaus.toString());
     }
     
     @Test
     public void ruutuLiikeOikea() {
-        pelaus.taytaRuutu(1, 6);
+        pelaus.getPelialue().taytaRuutu(1, 6);
         pelaus.liikuOikealle();
         assertEquals("1, 5", pelaus.toString());
     }
