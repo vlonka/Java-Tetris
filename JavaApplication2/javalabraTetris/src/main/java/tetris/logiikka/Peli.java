@@ -58,6 +58,8 @@ public class Peli {
         }
     }
     
+    
+    
     @Override
     public String toString() {
         return pala.getKorkeus() + ", " + pala.getLeveys();

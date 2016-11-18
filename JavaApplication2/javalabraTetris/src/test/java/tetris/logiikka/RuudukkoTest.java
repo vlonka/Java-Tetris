@@ -84,4 +84,12 @@ public class RuudukkoTest {
         assertFalse(ruudut.onkoTaynna(6, 9));
     }
     
+    @Test
+    public void onkoHavittyToimii() {
+        assertFalse(ruudut.onkoHavitty());
+        
+        ruudut.taytaRuutu(2, 9);
+        assertTrue(ruudut.onkoHavitty());
+    }
+    
 }

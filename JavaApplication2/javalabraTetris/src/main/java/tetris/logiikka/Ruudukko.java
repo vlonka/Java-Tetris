@@ -37,23 +37,32 @@ public class Ruudukko {
         }
         return true;
     }
-    
+
     public void tyhjennaRivi(int y) {
         for (int x = 0; x <= 9; x++) {
             ruudut[y][x] = null;
         }
     }
-    
+
     public void pudotaRuudut(int y) {
-        
+
         for (int i = y; i > 0; i--) {
             kopioiRivi(i, i - 1);
         }
     }
-    
+
     private void kopioiRivi(int korvattava, int kopio) {
         for (int x = 0; x <= 9; x++) {
             ruudut[korvattava][x] = ruudut[kopio][x];
         }
+    }
+
+    public boolean onkoHavitty() {
+        for (int x = 0; x <= 9; x++) {
+            if (onkoTaynna(2, x)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
