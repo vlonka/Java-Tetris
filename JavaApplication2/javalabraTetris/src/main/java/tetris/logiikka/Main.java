@@ -38,7 +38,7 @@ public class Main {
         for (int i = 0; i <= 80; i++) {
             pelaus.putoa();
         }
-        for (int y = 0; y <= 22; y++) {
+        for (int y = 0; y <= 23; y++) {
             if (y < 10) {
                 System.out.print(y + "  ");
             } else {

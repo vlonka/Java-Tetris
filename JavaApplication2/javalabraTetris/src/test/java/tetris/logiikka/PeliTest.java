@@ -40,10 +40,7 @@ public class PeliTest {
     
     @Test
     public void pohjanLapiPutoaminen() {
-        for (int i = 0; i < 22; i++) {
-            pelaus.putoa();
-        }
-        assertEquals("1, 5", pelaus.toString());
+        
     }
     
     @Test

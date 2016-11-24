@@ -9,12 +9,13 @@ package tetris.logiikka;
  *
  * @author vlonka
  */
-public class Nelio {
+public class Pala {
     
     private int korkeus;
     private int leveys;
+    private Ruudukko ruudut;
     
-    public Nelio(int korkeus, int leveys) {
+    public Pala(int korkeus, int leveys) {
         this.korkeus = korkeus;
         this.leveys = leveys;
     }
@@ -34,5 +35,6 @@ public class Nelio {
     public void setLeveys(int leveys) {
         this.leveys = leveys;
     }
+    
     
 }

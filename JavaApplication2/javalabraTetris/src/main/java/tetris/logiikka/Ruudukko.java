@@ -14,7 +14,7 @@ public class Ruudukko {
     private Ruutu[][] ruudut;
 
     public Ruudukko() {
-        this.ruudut = new Ruutu[23][10];
+        this.ruudut = new Ruutu[24][10];
     }
 
     public void taytaRuutu(int y, int x) {
