@@ -7,4 +7,6 @@ Päivä | Tunnit | Kuvaus
 15.11.2016 | 2.5h | Testien säätöä.
 17.11.2016 | 4h | Koodausta.
 18.11.2016 | 2h | Koodausta, säätöä, laiskuutta.
+22.11.2016 | 0.5h | Koodausta.
+22.11.2016 | 4h | Koodausta, kunnon koodia paloille.
 ... | ... | ...
