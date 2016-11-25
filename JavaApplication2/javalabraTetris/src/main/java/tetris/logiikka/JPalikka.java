@@ -20,7 +20,34 @@ public class JPalikka extends Palikka {
     
     @Override
     public void pyori() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (asento == 1) {
+            pyori1();
+            asento++;
+        } else if (asento == 2) {
+            pyori2();
+            asento++;
+        } else if (asento == 3) {
+            pyori3();
+        } else if (asento == 4) {
+            pyori4();
+            asento = 1;
+        }
+    }
+
+    private void pyori1() {
+        
+    }
+
+    private void pyori2() {
+        
+    }
+
+    private void pyori3() {
+        
+    }
+    
+    private void pyori4() {
+        
     }
     
 }

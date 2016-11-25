@@ -20,7 +20,21 @@ public class SPalikka extends Palikka {
 
     @Override
     public void pyori() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (asento == 1) {
+            pyori1();
+            asento++;
+        } else if (asento == 2) {
+            pyori2();
+            asento = 1;
+        }
+    }
+
+    public void pyori1() {
+        
+    }
+
+    public void pyori2() {
+
     }
     
 }

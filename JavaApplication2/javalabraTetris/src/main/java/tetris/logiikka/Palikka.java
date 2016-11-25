@@ -6,6 +6,7 @@
 package tetris.logiikka;
 
 /**
+ * Se alaspäin liikkuva palikka. Koostuu paloista.
  *
  * @author vlonka
  */
@@ -19,11 +20,14 @@ public abstract class Palikka {
     private Pala pala3;
     private Pala[] palat;
 
-    public Palikka(Pala pala1, Pala pala2, Pala pala3, Pala pala4, Ruudukko pelialue) {
-        this.pala0 = pala1;
-        this.pala1 = pala2;
-        this.pala2 = pala3;
-        this.pala3 = pala4;
+    /**
+     * Konstruktori.
+     */
+    public Palikka(Pala pala0, Pala pala1, Pala pala2, Pala pala3, Ruudukko pelialue) {
+        this.pala0 = pala0;
+        this.pala1 = pala1;
+        this.pala2 = pala2;
+        this.pala3 = pala3;
         this.pelialue = pelialue;
         this.palat = new Pala[4];
 
@@ -31,10 +35,24 @@ public abstract class Palikka {
         palat[1] = pala1;
         palat[2] = pala2;
         palat[3] = pala3;
+
     }
 
+    /**
+     * Pyörittää palikkaa, eri palikoiden pyöriminen vaati erillisen toteutuksen. 
+     */
     public abstract void pyori();
 
+    /**
+     * Tarkistaa voiko pala liikkua vasemmalle, vai onko tiellä pelikentän
+     * reuna tai ruutu.
+     *
+     * @param pala Yksi palikan paloista.
+     *
+     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
+     * 
+     * @return true jos voi liikkua, false jos ei.
+     */
     public boolean voikoLiikkuaVasemmalle(Pala pala) {
 
         int x = pala.getLeveys();
@@ -48,6 +66,16 @@ public abstract class Palikka {
         return false;
     }
 
+    /**
+     * Tarkistaa voiko pala liikkua oikealle, vai onko tiellä pelikentän
+     * reuna tai ruutu.
+     *
+     * @param pala Yksi poalikan paloista.
+     *
+     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
+     * 
+     * @return true jos voi liikkua, false jos ei.
+     */
     public boolean voikoliikkuaOikealle(Pala pala) {
         int y = pala.getKorkeus();
         int x = pala.getLeveys();
@@ -60,6 +88,11 @@ public abstract class Palikka {
         return false;
     }
 
+    /**
+     * Yrittää liikuttaa palikkaa vasemmalle, käyttää metodia voikoLiikkuaVasemmalle().
+     * 
+     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala) 
+     */
     public void liikuVasemmalle() {
         for (Pala pala : palat) {
             if (!voikoLiikkuaVasemmalle(pala)) {
@@ -71,6 +104,11 @@ public abstract class Palikka {
         }
     }
 
+    /**
+     * Yrittää liikuttaa palikkaa oikealle, käyttää metodia voikoLiikkuaOikealle().
+     *
+     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala) 
+     */
     public void liikuOikealle() {
         for (Pala pala : palat) {
             if (!voikoliikkuaOikealle(pala)) {
@@ -82,19 +120,35 @@ public abstract class Palikka {
         }
     }
 
+    /**
+     * Yrittää liikuttaa alaspäin, käyttää metodia voikoPudota(). Jos ei voi,
+     * täyttää palikan sijainnin ruuduilla.
+     *
+     * @see tetris.logiikka.Palikka#voikoPudota(tetris.logiikka.Pala) 
+     * @see tetris.logiikka.Ruudukko#taytaRuutu(int, int) 
+     */
     public void putoa() {
         for (Pala pala : palat) {
             if (!voikoPudota(pala)) {
                 for (Pala pala1 : palat) {
                     pelialue.taytaRuutu(pala1.getKorkeus(), pala1.getLeveys());
-                } return;
-            }
-            for (Pala pala2 : palat) {
-                pala2.setKorkeus(pala2.getKorkeus() + 1);
+                }
+                return;
             }
         }
+        for (Pala pala2 : palat) {
+            pala2.setKorkeus(pala2.getKorkeus() + 1);
+        }
+
     }
 
+    /**
+     * Tarkastaa voiko pala liikkua alaspäin vai onko esteitä.
+     * 
+     * @param pala Palikan pala jota käydään läpi
+     *
+     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int) 
+     */
     public boolean voikoPudota(Pala pala) {
         int y = pala.getKorkeus();
         int x = pala.getLeveys();
@@ -103,6 +157,18 @@ public abstract class Palikka {
             return false;
         }
         return true;
+    }
+
+    /**
+     * toString testien avuksi.
+     */
+    @Override
+    public String toString() {
+        return pala0.getKorkeus() + ", " + pala0.getLeveys() + "; "
+                + pala1.getKorkeus() + ", " + pala1.getLeveys() + "; "
+                + pala2.getKorkeus() + ", " + pala2.getLeveys() + "; "
+                + pala3.getKorkeus() + ", " + pala3.getLeveys();
+
     }
 
 }

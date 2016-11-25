@@ -18,6 +18,10 @@ public class OPalikka extends Palikka {
         this.asento = 1;
     }
 
+    /**
+     * Neliön muotoisen kappaalen keirtyminen 90 astetta ei tässä yhteydessä tee mitään,
+     * joten O-palikka ei pyöri.
+     */
     @Override
     public void pyori() {
         

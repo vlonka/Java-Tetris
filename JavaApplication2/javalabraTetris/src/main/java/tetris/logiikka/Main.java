@@ -18,11 +18,6 @@ public class Main {
 
         Peli pelaus = new Peli();        // testikoodia
 
-        pelaus.putoa();
-        for (int i = 0; i < 10; i++) {
-            pelaus.liikuVasemmalle();
-        }
-
         System.out.println(pelaus.toString());
         System.out.println("");
 
@@ -34,10 +29,11 @@ public class Main {
         pelaus.getPelialue().tyhjennaRivi(2);
         pelaus.getPelialue().tyhjennaRivi(3);
         pelaus.getPelialue().pudotaRuudut(11);
+        
+        Palikka nelio = new OPalikka(pelaus.getPelialue());
+        nelio.putoa();
 
-        for (int i = 0; i <= 80; i++) {
-            pelaus.putoa();
-        }
+        
         for (int y = 0; y <= 23; y++) {
             if (y < 10) {
                 System.out.print(y + "  ");
@@ -53,6 +49,9 @@ public class Main {
             }
             System.out.println();
         }
+        
+        System.out.println();
+        System.out.println(nelio.toString());
 
     }
 

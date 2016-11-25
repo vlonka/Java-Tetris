@@ -6,7 +6,8 @@
 package tetris.logiikka;
 
 /**
- *
+ * Ruudukossa olevat ruudut.
+ * 
  * @author vlonka
  */
 public class Ruutu {
