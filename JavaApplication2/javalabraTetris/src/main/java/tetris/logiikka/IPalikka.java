@@ -22,19 +22,43 @@ public class IPalikka extends Palikka {
     public void pyori() {
         if (asento == 1) {
             pyori1();
-            asento++;
         } else if (asento == 2) {
             pyori2();
-            asento = 1;
         }
     }
 
     public void pyori1() {
-        
+        if (!pelialue.onkoTaynna(pala1.getKorkeus() + 1, pala1.getLeveys() + 1)
+                && !pelialue.onkoTaynna(pala2.getKorkeus() + 2, pala2.getLeveys() + 2)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() + 3, pala3.getLeveys() - 2)) {
+            pala1.setKorkeus(pala1.getKorkeus() + 1);
+            pala1.setLeveys(pala1.getLeveys() + 1);
+
+            pala2.setKorkeus(pala2.getKorkeus() + 2);
+            pala2.setLeveys(pala2.getLeveys() - 1);
+
+            pala3.setKorkeus(pala3.getKorkeus() + 3);
+            pala3.setLeveys(pala3.getLeveys() - 2);
+            
+            asento++;
+        }
     }
 
     public void pyori2() {
+        if (pelialue.onkoTaynna(pala1.getKorkeus() - 1, pala1.getLeveys() - 1)
+                && pelialue.onkoTaynna(pala2.getKorkeus() - 2, pala2.getLeveys() + 1)
+                && pelialue.onkoTaynna(pala3.getKorkeus() - 3, pala3.getLeveys() + 2)) {
+            pala1.setKorkeus(pala1.getKorkeus() - 1);
+            pala1.setLeveys(pala1.getLeveys() - 1);
 
+            pala2.setKorkeus(pala2.getKorkeus() - 2);
+            pala2.setLeveys(pala2.getLeveys() + 1);
+
+            pala3.setKorkeus(pala3.getKorkeus() - 3);
+            pala3.setLeveys(pala3.getLeveys() + 2);
+            
+            asento = 1;
+        }
     }
 
 }

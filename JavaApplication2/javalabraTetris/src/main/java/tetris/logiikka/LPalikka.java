@@ -10,9 +10,9 @@ package tetris.logiikka;
  * @author vlonka
  */
 public class LPalikka extends Palikka {
-    
+
     private int asento;
-    
+
     public LPalikka(Ruudukko pelialue) {
         super(new Pala(1, 4), new Pala(2, 4), new Pala(3, 4), new Pala(3, 5), pelialue);
         this.asento = 1;
@@ -35,19 +35,56 @@ public class LPalikka extends Palikka {
     }
 
     private void pyori1() {
-        
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() + 1, pala0.getLeveys() + 1)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() - 1, pala3.getLeveys() + 1)) {
+            pala0.setKorkeus(pala0.getKorkeus() + 1);
+            pala0.setLeveys(pala0.getLeveys() + 1);
+
+            pala3.setKorkeus(pala3.getKorkeus() - 1);
+            pala3.setLeveys(pala3.getLeveys() + 1);
+        }
     }
 
     private void pyori2() {
-        
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() - 1, pala0.getLeveys() + 1)
+                && !pelialue.onkoTaynna(pala1.getKorkeus() - 1, (pala1.getLeveys() + 1))
+                && !pelialue.onkoTaynna(pala2.getKorkeus(), pala2.getLeveys() + 2)) {
+            pala0.setKorkeus(pala0.getKorkeus() - 1);
+            pala0.setLeveys(pala0.getLeveys() + 1);
+
+            pala1.setKorkeus(pala1.getKorkeus() - 1);
+            pala1.setLeveys(pala1.getLeveys() + 1);
+
+            pala2.setLeveys(pala2.getLeveys() - 2);
+        }
     }
 
     private void pyori3() {
-        
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() + 2, pala0.getLeveys() - 1)
+                && !pelialue.onkoTaynna(pala1.getKorkeus() + 2, (pala1.getLeveys() - 1))) {
+            pala0.setKorkeus(pala0.getKorkeus() + 2);
+            pala0.setLeveys(pala0.getLeveys() - 1);
+
+            pala1.setKorkeus(pala1.getKorkeus() + 2);
+            pala1.setLeveys(pala1.getLeveys() - 1);
+        }
     }
-    
+
     private void pyori4() {
-        
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() - 2, pala0.getLeveys() - 1)
+                && !pelialue.onkoTaynna(pala1.getKorkeus() - 1, pala1.getLeveys())
+                && !pelialue.onkoTaynna(pala2.getKorkeus(), pala2.getLeveys() - 2)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() + 1, pala3.getLeveys() - 1)) {
+            pala0.setKorkeus(pala0.getKorkeus() - 2);
+            pala0.setLeveys(pala0.getLeveys() - 1);
+
+            pala1.setKorkeus(pala1.getKorkeus() - 1);
+
+            pala2.setLeveys(pala2.getLeveys() - 2);
+
+            pala3.setKorkeus(pala3.getKorkeus() + 1);
+            pala3.setLeveys(pala3.getLeveys() - 1);
+        }
     }
-    
+
 }

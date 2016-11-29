@@ -12,13 +12,13 @@ package tetris.logiikka;
  */
 public abstract class Palikka {
 
-    private Ruudukko pelialue;
-    private int asento;
-    private Pala pala0;
-    private Pala pala1;
-    private Pala pala2;
-    private Pala pala3;
-    private Pala[] palat;
+    protected Ruudukko pelialue;
+    protected int asento;
+    protected Pala pala0;
+    protected Pala pala1;
+    protected Pala pala2;
+    protected Pala pala3;
+    protected Pala[] palat;
 
     /**
      * Konstruktori.
@@ -39,18 +39,19 @@ public abstract class Palikka {
     }
 
     /**
-     * Pyörittää palikkaa, eri palikoiden pyöriminen vaati erillisen toteutuksen. 
+     * Pyörittää palikkaa, eri palikoiden pyöriminen vaati erillisen
+     * toteutuksen.
      */
     public abstract void pyori();
 
     /**
-     * Tarkistaa voiko pala liikkua vasemmalle, vai onko tiellä pelikentän
-     * reuna tai ruutu.
+     * Tarkistaa voiko pala liikkua vasemmalle, vai onko tiellä pelikentän reuna
+     * tai ruutu.
      *
      * @param pala Yksi palikan paloista.
      *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
-     * 
+     *
      * @return true jos voi liikkua, false jos ei.
      */
     public boolean voikoLiikkuaVasemmalle(Pala pala) {
@@ -67,13 +68,13 @@ public abstract class Palikka {
     }
 
     /**
-     * Tarkistaa voiko pala liikkua oikealle, vai onko tiellä pelikentän
-     * reuna tai ruutu.
+     * Tarkistaa voiko pala liikkua oikealle, vai onko tiellä pelikentän reuna
+     * tai ruutu.
      *
      * @param pala Yksi poalikan paloista.
      *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
-     * 
+     *
      * @return true jos voi liikkua, false jos ei.
      */
     public boolean voikoliikkuaOikealle(Pala pala) {
@@ -89,9 +90,10 @@ public abstract class Palikka {
     }
 
     /**
-     * Yrittää liikuttaa palikkaa vasemmalle, käyttää metodia voikoLiikkuaVasemmalle().
-     * 
-     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala) 
+     * Yrittää liikuttaa palikkaa vasemmalle, käyttää metodia
+     * voikoLiikkuaVasemmalle().
+     *
+     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala)
      */
     public void liikuVasemmalle() {
         for (Pala pala : palat) {
@@ -105,9 +107,10 @@ public abstract class Palikka {
     }
 
     /**
-     * Yrittää liikuttaa palikkaa oikealle, käyttää metodia voikoLiikkuaOikealle().
+     * Yrittää liikuttaa palikkaa oikealle, käyttää metodia
+     * voikoLiikkuaOikealle().
      *
-     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala) 
+     * @see tetris.logiikka.Palikka#voikoLiikkuaVasemmalle(tetris.logiikka.Pala)
      */
     public void liikuOikealle() {
         for (Pala pala : palat) {
@@ -124,8 +127,8 @@ public abstract class Palikka {
      * Yrittää liikuttaa alaspäin, käyttää metodia voikoPudota(). Jos ei voi,
      * täyttää palikan sijainnin ruuduilla.
      *
-     * @see tetris.logiikka.Palikka#voikoPudota(tetris.logiikka.Pala) 
-     * @see tetris.logiikka.Ruudukko#taytaRuutu(int, int) 
+     * @see tetris.logiikka.Palikka#voikoPudota(tetris.logiikka.Pala)
+     * @see tetris.logiikka.Ruudukko#taytaRuutu(int, int)
      */
     public void putoa() {
         for (Pala pala : palat) {
@@ -144,10 +147,10 @@ public abstract class Palikka {
 
     /**
      * Tarkastaa voiko pala liikkua alaspäin vai onko esteitä.
-     * 
+     *
      * @param pala Palikan pala jota käydään läpi
      *
-     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int) 
+     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
      */
     public boolean voikoPudota(Pala pala) {
         int y = pala.getKorkeus();

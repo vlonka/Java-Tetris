@@ -10,9 +10,9 @@ package tetris.logiikka;
  * @author vlonka
  */
 public class ZPalikka extends Palikka {
-    
+
     private int asento;
-    
+
     public ZPalikka(Ruudukko pelialue) {
         super(new Pala(2, 4), new Pala(2, 5), new Pala(3, 5), new Pala(3, 6), pelialue);
         this.asento = 1;
@@ -30,11 +30,23 @@ public class ZPalikka extends Palikka {
     }
 
     public void pyori1() {
-        
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() - 1, pala0.getLeveys() + 2)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() - 1, pala3.getLeveys())) {
+            pala0.setKorkeus(pala0.getKorkeus() - 1);
+            pala0.setLeveys(pala0.getLeveys() + 2);
+
+            pala3.setKorkeus(pala3.getKorkeus() - 1);
+        }
     }
 
     public void pyori2() {
+        if (!pelialue.onkoTaynna(pala0.getKorkeus() + 1, pala0.getLeveys() - 2)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() + 1, pala3.getLeveys())) {
+            pala0.setKorkeus(pala0.getKorkeus() + 1);
+            pala0.setLeveys(pala0.getLeveys() - 2);
 
+            pala3.setKorkeus(pala3.getKorkeus() + 1);
+        }
     }
-    
+
 }

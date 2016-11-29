@@ -10,7 +10,7 @@ package tetris.logiikka;
  * @author vlonka
  */
 public class TPalikka extends Palikka {
-    
+
     private int asento;
 
     public TPalikka(Ruudukko pelialue) {
@@ -35,19 +35,37 @@ public class TPalikka extends Palikka {
     }
 
     private void pyori1() {
-        
+        if (!pelialue.onkoTaynna(pala3.getKorkeus() - 1, pala3.getLeveys() - 1)) {
+            pala3.setKorkeus(pala3.getKorkeus() - 1);
+            pala3.setLeveys(pala3.getLeveys() - 1);
+        }
     }
 
     private void pyori2() {
-        
+        if (!pelialue.onkoTaynna(pala1.getKorkeus() + 1, pala1.getLeveys())
+                && !pelialue.onkoTaynna(pala3.getKorkeus() + 2, pala3.getLeveys() + 1)) {
+            pala1.setKorkeus(pala1.getKorkeus() + 1);
+
+            pala3.setKorkeus(pala3.getKorkeus() + 2);
+            pala3.setLeveys(pala3.getLeveys() + 1);
+        }
     }
 
     private void pyori3() {
-        
+        if (!pelialue.onkoTaynna(pala1.getKorkeus() - 2, pala1.getLeveys() + 1)
+                && !pelialue.onkoTaynna(pala3.getKorkeus() - 1, pala3.getLeveys())) {
+            pala1.setKorkeus(pala1.getKorkeus() - 2);
+            pala1.setLeveys(pala1.getLeveys() + 1);
+
+            pala3.setKorkeus(pala3.getKorkeus() - 1);
+        }
     }
-    
+
     private void pyori4() {
-        
+        if (!pelialue.onkoTaynna(pala1.getKorkeus() + 1, pala1.getLeveys() - 1)) {
+            pala1.setKorkeus(pala1.getKorkeus() + 1);
+            pala1.setLeveys(pala1.getLeveys() - 1);
+        }
     }
-    
+
 }

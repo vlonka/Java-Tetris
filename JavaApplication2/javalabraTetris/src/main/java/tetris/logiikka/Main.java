@@ -21,16 +21,17 @@ public class Main {
         System.out.println(pelaus.toString());
         System.out.println("");
 
-        pelaus.getPelialue().taytaRuutu(2, 3);
+
         pelaus.getPelialue().taytaRuutu(9, 6);
         pelaus.getPelialue().taytaRuutu(9, 4);
         pelaus.getPelialue().taytaRuutu(17, 5);
         
-        pelaus.getPelialue().tyhjennaRivi(2);
-        pelaus.getPelialue().tyhjennaRivi(3);
         pelaus.getPelialue().pudotaRuudut(11);
         
-        Palikka nelio = new OPalikka(pelaus.getPelialue());
+        Palikka nelio = new IPalikka(pelaus.getPelialue());
+        nelio.pyori();
+        nelio.pyori();
+        pelaus.getPelialue().taytaRuutu(4, 4);
         nelio.putoa();
 
         
