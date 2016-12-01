@@ -21,20 +21,35 @@ public class Main {
         System.out.println(pelaus.toString());
         System.out.println("");
 
-
         pelaus.getPelialue().taytaRuutu(9, 6);
         pelaus.getPelialue().taytaRuutu(9, 4);
         pelaus.getPelialue().taytaRuutu(17, 5);
-        
+
         pelaus.getPelialue().pudotaRuudut(11);
-        
+
         Palikka nelio = new IPalikka(pelaus.getPelialue());
-        nelio.pyori();
-        nelio.pyori();
         pelaus.getPelialue().taytaRuutu(4, 4);
+        pelaus.getPelialue().taytaRuutu(6, 4);
+        pelaus.getPelialue().taytaRuutu(6, 9);
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.liikuOikealle();
+        nelio.liikuOikealle();
+        nelio.liikuOikealle();
+        nelio.liikuOikealle();
+        nelio.liikuOikealle();
+        nelio.liikuOikealle();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
+        nelio.putoa();
         nelio.putoa();
 
-        
         for (int y = 0; y <= 23; y++) {
             if (y < 10) {
                 System.out.print(y + "  ");
@@ -50,7 +65,7 @@ public class Main {
             }
             System.out.println();
         }
-        
+
         System.out.println();
         System.out.println(nelio.toString());
 
