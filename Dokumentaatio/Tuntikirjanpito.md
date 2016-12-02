@@ -10,4 +10,5 @@ Päivä | Tunnit | Kuvaus
 22.11.2016 | 0.5h | Koodausta.
 22.11.2016 | 4h | Koodausta, kunnon koodia paloille.
 25.11.2016 | 5h | Koodausta, testejä, javadoc.
+2.12.2016 | 8h | Koodausta, muutamia testejä, vähän sekvenssikaavion piirtoa.
 ... | ... | ...
