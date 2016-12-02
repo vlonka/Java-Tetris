@@ -17,11 +17,7 @@ public class OPalikka extends Palikka {
         super(new Pala(3, 4), new Pala(3, 5), new Pala(2, 4), new Pala(2, 5), pelialue);
         this.asento = 1;
     }
-
-    /**
-     * Neliön muotoisen kappaalen keirtyminen 90 astetta ei tässä yhteydessä tee mitään,
-     * joten O-palikka ei pyöri.
-     */
+    
     @Override
     public void pyori() {
         

@@ -15,14 +15,23 @@ public class IPalikka extends Palikka {
     private Vektori[] liike1 = new Vektori[]{new Vektori(0, 0), new Vektori(1, 1),
         new Vektori(2, -1), new Vektori(3, -2)};
     private Vektori[] liike2 = new Vektori[]{new Vektori(0, 0), new Vektori(-1, -1),
-        new Vektori(-2, 1), new Vektori(-2, 2)};
+        new Vektori(-2, 1), new Vektori(-3, 2)};
 
+    /**
+     * Konstruktori
+     * 
+     * @param pelialue 
+     */
     public IPalikka(Ruudukko pelialue) {
         super(new Pala(3, 4), new Pala(2, 4), new Pala(1, 4), new Pala(0, 4), pelialue);
         this.asento = 1;
 
     }
 
+    /**
+     * Katsoo mikä pyörimisliike suoritetaan.
+     * 
+     */
     @Override
     public void pyori() {
         if (asento == 1) {
@@ -34,47 +43,25 @@ public class IPalikka extends Palikka {
         }
     }
 
-    public void pyori1() {
-        if (!pelialue.onkoTaynna(pala1.getKorkeus() + 1, pala1.getLeveys() + 1)
-                && !pelialue.onkoTaynna(pala2.getKorkeus() + 2, pala2.getLeveys() + 2)
-                && !pelialue.onkoTaynna(pala3.getKorkeus() + 3, pala3.getLeveys() - 2)) {
-            pala1.setKorkeus(pala1.getKorkeus() + 1);
-            pala1.setLeveys(pala1.getLeveys() + 1);
+    /**
+     * Pyörittää palaa Vektorilistan mukaan.
+     * 
+     * @param liike array palojen liikkeistä.
+     * 
+     * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
+     */
+    public void pyorinta(Vektori[] liike) {
 
-            pala2.setKorkeus(pala2.getKorkeus() + 2);
-            pala2.setLeveys(pala2.getLeveys() - 1);
-
-            pala3.setKorkeus(pala3.getKorkeus() + 3);
-            pala3.setLeveys(pala3.getLeveys() - 2);
-
-            asento++;
-        }
-    }
-
-    private void pyorinta(Vektori[] liike) {
         for (int i = 0; i <= 3; i++) {
-            if (palat[i].getLeveys() + liike[i].LeveysMuutos < 0 || palat[i].getLeveys() + liike[i].LeveysMuutos > 9) {
-                if (!pelialue.onkoTaynna(palat[i].getKorkeus() + liike[i].KorkeusMuutos, palat[i].getLeveys() + liike[i].LeveysMuutos)) {
-               
-                }
+            if (palat[i].getLeveys() + liike[i].LeveysMuutos < 0 || palat[i].getLeveys() + liike[i].LeveysMuutos > 9
+                    || pelialue.onkoTaynna(palat[i].getKorkeus() + liike[i].KorkeusMuutos, palat[i].getLeveys() + liike[i].LeveysMuutos)) {
+                return;
+            }
+        }
+            for (int j = 0; j <= 3; j++) {
+                palat[j].setKorkeus(palat[j].getKorkeus() + liike[j].KorkeusMuutos);
+                palat[j].setLeveys(palat[j].getLeveys() + liike[j].LeveysMuutos);
             }
         }
     }
 
-    public void pyori2() {
-        if (!pelialue.onkoTaynna(pala1.getKorkeus() - 1, pala1.getLeveys() - 1)
-                && !pelialue.onkoTaynna(pala2.getKorkeus() - 2, pala2.getLeveys() + 1)
-                && !pelialue.onkoTaynna(pala3.getKorkeus() - 3, pala3.getLeveys() + 2)) {
-            pala1.setKorkeus(pala1.getKorkeus() - 1);
-            pala1.setLeveys(pala1.getLeveys() - 1);
-
-            pala2.setKorkeus(pala2.getKorkeus() - 2);
-            pala2.setLeveys(pala2.getLeveys() + 1);
-
-            pala3.setKorkeus(pala3.getKorkeus() - 3);
-            pala3.setLeveys(pala3.getLeveys() + 2);
-
-            asento = 1;
-        }
-    }
-}

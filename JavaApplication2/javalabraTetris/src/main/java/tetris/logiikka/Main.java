@@ -27,27 +27,17 @@ public class Main {
 
         pelaus.getPelialue().pudotaRuudut(11);
 
-        Palikka nelio = new IPalikka(pelaus.getPelialue());
+        Palikka nelio = new JPalikka(pelaus.getPelialue());
+        pelaus.getPelialue().taytaRuutu(4, 3);
         pelaus.getPelialue().taytaRuutu(4, 4);
+        pelaus.getPelialue().taytaRuutu(4, 5);
+        pelaus.getPelialue().taytaRuutu(4, 6);
         pelaus.getPelialue().taytaRuutu(6, 4);
         pelaus.getPelialue().taytaRuutu(6, 9);
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.liikuOikealle();
-        nelio.liikuOikealle();
-        nelio.liikuOikealle();
-        nelio.liikuOikealle();
-        nelio.liikuOikealle();
-        nelio.liikuOikealle();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
-        nelio.putoa();
+        nelio.pyori();
+        nelio.pyori();
+        nelio.pyori();
+        nelio.pyori();
         nelio.putoa();
 
         for (int y = 0; y <= 23; y++) {
