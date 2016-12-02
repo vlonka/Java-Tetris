@@ -11,19 +11,20 @@ package tetris.logiikka;
  * @author vlonka
  */
 public class Vektori {
-    int KorkeusMuutos;
-    int LeveysMuutos;
-    
-    public Vektori(int y,int x) {
-        this.KorkeusMuutos = y;
-        this.LeveysMuutos = x;
+
+    int korkeusMuutos;
+    int leveysMuutos;
+
+    public Vektori(int y, int x) {
+        this.korkeusMuutos = y;
+        this.leveysMuutos = x;
     }
 
     public int getKorkeusMuutos() {
-        return KorkeusMuutos;
+        return korkeusMuutos;
     }
 
     public int getLeveysMuutos() {
-        return LeveysMuutos;
+        return leveysMuutos;
     }
 }

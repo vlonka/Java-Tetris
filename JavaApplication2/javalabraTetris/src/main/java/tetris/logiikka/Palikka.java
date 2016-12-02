@@ -41,10 +41,9 @@ public abstract class Palikka {
     /**
      * Pyörittää palikkaa. Toteutus alaluokilla koska Vektoriarrayta ei saatu
      * toimimaan yläluokassa.
-     * 
-     */ 
+     *
+     */
     public abstract void pyori();
-    
 
     /**
      * Tarkistaa voiko pala liikkua vasemmalle, vai onko tiellä pelikentän reuna

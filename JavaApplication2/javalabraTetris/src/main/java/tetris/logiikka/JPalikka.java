@@ -23,8 +23,8 @@ public class JPalikka extends Palikka {
 
     /**
      * Konstruktori.
-     * 
-     * @param pelialue 
+     *
+     * @param pelialue Pelialueena toimiva ruudukko.
      */
     public JPalikka(Ruudukko pelialue) {
         super(new Pala(3, 4), new Pala(3, 5), new Pala(2, 5), new Pala(1, 5), pelialue);
@@ -33,7 +33,7 @@ public class JPalikka extends Palikka {
 
     /**
      * Katsoo mikä pyörimisliike suoritetaan.
-     * 
+     *
      */
     @Override
     public void pyori() {
@@ -52,24 +52,24 @@ public class JPalikka extends Palikka {
         }
     }
 
-        /**
+    /**
      * Pyörittää palaa Vektorilistan mukaan.
-     * 
+     *
      * @param liike array palojen liikkeistä.
-     * 
+     *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
      */
     public void pyorinta(Vektori[] liike) {
 
         for (int i = 0; i <= 3; i++) {
-            if (palat[i].getLeveys() + liike[i].LeveysMuutos < 0 || palat[i].getLeveys() + liike[i].LeveysMuutos > 9
-                    || pelialue.onkoTaynna(palat[i].getKorkeus() + liike[i].KorkeusMuutos, palat[i].getLeveys() + liike[i].LeveysMuutos)) {
+            if (palat[i].getLeveys() + liike[i].leveysMuutos < 0 || palat[i].getLeveys() + liike[i].leveysMuutos > 9
+                    || pelialue.onkoTaynna(palat[i].getKorkeus() + liike[i].korkeusMuutos, palat[i].getLeveys() + liike[i].leveysMuutos)) {
                 return;
             }
         }
-            for (int j = 0; j <= 3; j++) {
-                palat[j].setKorkeus(palat[j].getKorkeus() + liike[j].KorkeusMuutos);
-                palat[j].setLeveys(palat[j].getLeveys() + liike[j].LeveysMuutos);
-            }
+        for (int j = 0; j <= 3; j++) {
+            palat[j].setKorkeus(palat[j].getKorkeus() + liike[j].korkeusMuutos);
+            palat[j].setLeveys(palat[j].getLeveys() + liike[j].leveysMuutos);
         }
+    }
 }
