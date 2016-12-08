@@ -39,7 +39,7 @@ public class Piirto extends JFrame implements Runnable {
     private void luoKomponentit(Container container) {
     }
 
-@Override
+//    @Override
     protected void paintComponent(Graphics graphics) {
         paintComponent(graphics);
         graphics.fillRect(50, 80, 100, 50);
