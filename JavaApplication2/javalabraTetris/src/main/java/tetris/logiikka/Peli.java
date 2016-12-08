@@ -13,15 +13,16 @@ package tetris.logiikka;
 public class Peli {
 
     private Ruudukko pelialue;
-
+    
     /**
      * Konstruktori.
-     */
-    
+     */    
     public Peli() {
         this.pelialue = new Ruudukko();
     }
 
+    
+    
     public Ruudukko getPelialue() {
         return pelialue;
     }

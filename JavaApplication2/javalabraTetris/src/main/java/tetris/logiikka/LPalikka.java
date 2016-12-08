@@ -21,11 +21,20 @@ public class LPalikka extends Palikka {
     private Vektori[] liike4 = new Vektori[]{new Vektori(-1, 0), new Vektori(-1, 0),
         new Vektori(0, -2), new Vektori(1, -1)};
 
+    /**
+     * Konstruktori.
+     *
+     * @param pelialue Pelialueena toimiva ruudukko.
+     */
     public LPalikka(Ruudukko pelialue) {
         super(new Pala(1, 4), new Pala(2, 4), new Pala(3, 4), new Pala(3, 5), pelialue);
         this.asento = 1;
     }
 
+    /**
+     * Katsoo mikä pyörimisliike suoritetaan.
+     *
+     */
     @Override
     public void pyori() {
         if (asento == 1) {
@@ -50,7 +59,7 @@ public class LPalikka extends Palikka {
      *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
      */
-    public void pyorinta(Vektori[] liike) {
+    private void pyorinta(Vektori[] liike) {
 
         for (int i = 0; i <= 3; i++) {
             if (palat[i].getLeveys() + liike[i].leveysMuutos < 0 || palat[i].getLeveys() + liike[i].leveysMuutos > 9
@@ -63,5 +72,4 @@ public class LPalikka extends Palikka {
             palat[j].setLeveys(palat[j].getLeveys() + liike[j].leveysMuutos);
         }
     }
-
 }

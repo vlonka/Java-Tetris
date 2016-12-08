@@ -5,6 +5,9 @@
  */
 package tetris.logiikka;
 
+import javax.swing.SwingUtilities;
+import tetris.ui.Piirto;
+
 /**
  *
  * @author vlonka
@@ -17,6 +20,9 @@ public class Main {
     public static void main(String[] args) {
 
         Peli pelaus = new Peli();        // testikoodia
+        
+        Piirto kayttoliittyma = new Piirto();
+        SwingUtilities.invokeLater(kayttoliittyma);
 
         System.out.println(pelaus.toString());
         System.out.println("");

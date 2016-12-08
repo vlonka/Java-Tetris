@@ -15,6 +15,12 @@ public class Vektori {
     int korkeusMuutos;
     int leveysMuutos;
 
+    /**
+     * Konstruktori
+     * 
+     * @param y Muutos korkeussuunnassa.
+     * @param x Muutos leveyssuunnassa.
+     */
     public Vektori(int y, int x) {
         this.korkeusMuutos = y;
         this.leveysMuutos = x;

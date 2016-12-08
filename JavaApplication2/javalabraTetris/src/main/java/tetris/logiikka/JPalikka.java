@@ -59,7 +59,7 @@ public class JPalikka extends Palikka {
      *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
      */
-    public void pyorinta(Vektori[] liike) {
+    private void pyorinta(Vektori[] liike) {
 
         for (int i = 0; i <= 3; i++) {
             if (palat[i].getLeveys() + liike[i].leveysMuutos < 0 || palat[i].getLeveys() + liike[i].leveysMuutos > 9
