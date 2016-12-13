@@ -7,9 +7,10 @@ package tetris.ui;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+import tetris.logiikka.Peli;
+import tetris.logiikka.Ruudukko;
 
 /**
  *
@@ -17,18 +18,22 @@ import javax.swing.WindowConstants;
  */
 public class Piirto extends JFrame implements Runnable {
 
-    public Piirto() {
+    private Ruudukko ruudukko;
+    private Peli peli;
+
+    public Piirto(Ruudukko ruudukko, Peli peli) {
+        this.ruudukko = ruudukko;
+        this.peli = peli;
     }
 
     @Override
     public void run() {
         new JFrame("Tetris");
-        setPreferredSize(new Dimension(300, 600));
+        setPreferredSize(new Dimension(310, 750));
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(getContentPane());
-
 
         repaint();
 
@@ -37,13 +42,7 @@ public class Piirto extends JFrame implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
+        container.add(new Piirtoalusta(ruudukko, peli));
+        addKeyListener(new NappaimistonKuuntelija(peli, this));
     }
-
-//    @Override
-    protected void paintComponent(Graphics graphics) {
-        paintComponent(graphics);
-        graphics.fillRect(50, 80, 100, 50);
-        graphics.fillRect(200, 20, 50, 200);
-    }
-
 }

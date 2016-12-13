@@ -35,10 +35,8 @@ public class SPalikka extends Palikka {
     public void pyori() {
         if (asento == 1) {
             pyorinta(liike1);
-            asento++;
         } else if (asento == 2) {
             pyorinta(liike2);
-            asento = 1;
         }
     }
 
@@ -60,6 +58,10 @@ public class SPalikka extends Palikka {
         for (int j = 0; j <= 3; j++) {
             palat[j].setKorkeus(palat[j].getKorkeus() + liike[j].korkeusMuutos);
             palat[j].setLeveys(palat[j].getLeveys() + liike[j].leveysMuutos);
+        }
+        asento++;
+        if (asento > 2) {
+            asento = 1;
         }
     }
 

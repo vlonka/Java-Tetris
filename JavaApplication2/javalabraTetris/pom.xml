@@ -71,8 +71,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>home.vlonka.Java-Tetris.JavaApplication2.javalabrateris.src.main.java.tetris.logiikka.Main</mainClass>
-                                    <!-- mainClass on muotoa "fi.omanimi.superprojekti.Main" -->
+                                    <mainClass>tetris.logiikka.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

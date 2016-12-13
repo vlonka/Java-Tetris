@@ -20,19 +20,7 @@ public class Main {
     public static void main(String[] args) {
 
         Peli pelaus = new Peli();        // testikoodia
-
-        Piirto kayttoliittyma = new Piirto();
-        SwingUtilities.invokeLater(kayttoliittyma);
-
-        System.out.println(pelaus.toString());
-        System.out.println("");
-
-        pelaus.luoPalikka();
-
-        for (int i = 0; i < 300; i++) {
-            pelaus.getPalikka().putoa();
-            pelaus.vaihdetaankoPalikka();
-        }
+        pelaus.peliPyorinta();
 
         for (int y = 0; y <= 23; y++) {
             if (y < 10) {
@@ -50,8 +38,8 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println();
-
+        System.out.println("");
+        System.out.println("Tuloksesi: " + pelaus.pisteet + " pistettä.");     
     }
 
 }

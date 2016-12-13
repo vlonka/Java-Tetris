@@ -168,6 +168,10 @@ public abstract class Palikka {
     public boolean getKorvattava() {
         return korvattava;
     }
+    
+    public Pala[] getPalat() {
+        return palat;
+    }
 
     /**
      * toString testien avuksi.

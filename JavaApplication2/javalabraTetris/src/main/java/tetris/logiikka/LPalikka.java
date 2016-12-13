@@ -18,7 +18,7 @@ public class LPalikka extends Palikka {
         new Vektori(0, 2), new Vektori(0, 0)};
     private Vektori[] liike3 = new Vektori[]{new Vektori(2, -1), new Vektori(2, -1),
         new Vektori(0, 0), new Vektori(0, 0)};
-    private Vektori[] liike4 = new Vektori[]{new Vektori(-1, 0), new Vektori(-1, 0),
+    private Vektori[] liike4 = new Vektori[]{new Vektori(-2, -1), new Vektori(-1, 0),
         new Vektori(0, -2), new Vektori(1, -1)};
 
     /**
@@ -39,16 +39,12 @@ public class LPalikka extends Palikka {
     public void pyori() {
         if (asento == 1) {
             pyorinta(liike1);
-            asento++;
         } else if (asento == 2) {
             pyorinta(liike2);
-            asento++;
         } else if (asento == 3) {
             pyorinta(liike3);
-            asento++;
         } else if (asento == 4) {
             pyorinta(liike4);
-            asento = 1;
         }
     }
 
@@ -70,6 +66,10 @@ public class LPalikka extends Palikka {
         for (int j = 0; j <= 3; j++) {
             palat[j].setKorkeus(palat[j].getKorkeus() + liike[j].korkeusMuutos);
             palat[j].setLeveys(palat[j].getLeveys() + liike[j].leveysMuutos);
+        }
+        asento++;
+        if (asento > 4) {
+            asento = 1;
         }
     }
 }
