@@ -13,5 +13,5 @@ Päivä | Tunnit | Kuvaus
 2.12.2016 | 8h | Koodausta, muutamia testejä, vähän sekvenssikaavion piirtoa.
 8.12.2016 | 2h | Koodausta.
 9.12.2016 | 3h | Viikkopalautukset, ruudun tuijottamista paljon enemmän.
-13.12.2016 8h | UI, pelilooppi.
+13.12.2016 | 8h | UI, pelilooppi.
 ... | ... | ...
