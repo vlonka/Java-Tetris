@@ -19,6 +19,7 @@ public abstract class Palikka {
     protected Pala pala2;
     protected Pala pala3;
     protected Pala[] palat;
+    private boolean korvattava;
 
     /**
      * Konstruktori.
@@ -30,6 +31,7 @@ public abstract class Palikka {
         this.pala3 = pala3;
         this.pelialue = pelialue;
         this.palat = new Pala[4];
+        this.korvattava = false;
 
         palat[0] = pala0;
         palat[1] = pala1;
@@ -137,13 +139,13 @@ public abstract class Palikka {
                 for (Pala pala1 : palat) {
                     pelialue.taytaRuutu(pala1.getKorkeus(), pala1.getLeveys());
                 }
+                korvattava = true;
                 return;
             }
         }
         for (Pala pala2 : palat) {
             pala2.setKorkeus(pala2.getKorkeus() + 1);
         }
-
     }
 
     /**
@@ -161,6 +163,10 @@ public abstract class Palikka {
             return false;
         }
         return true;
+    }
+
+    public boolean getKorvattava() {
+        return korvattava;
     }
 
     /**

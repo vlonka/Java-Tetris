@@ -20,31 +20,19 @@ public class Main {
     public static void main(String[] args) {
 
         Peli pelaus = new Peli();        // testikoodia
-        
+
         Piirto kayttoliittyma = new Piirto();
         SwingUtilities.invokeLater(kayttoliittyma);
 
         System.out.println(pelaus.toString());
         System.out.println("");
 
-        pelaus.getPelialue().taytaRuutu(9, 6);
-        pelaus.getPelialue().taytaRuutu(9, 4);
-        pelaus.getPelialue().taytaRuutu(17, 5);
+        pelaus.luoPalikka();
 
-        pelaus.getPelialue().pudotaRuudut(11);
-
-        Palikka nelio = new JPalikka(pelaus.getPelialue());
-        pelaus.getPelialue().taytaRuutu(4, 3);
-        pelaus.getPelialue().taytaRuutu(4, 4);
-        pelaus.getPelialue().taytaRuutu(4, 5);
-        pelaus.getPelialue().taytaRuutu(4, 6);
-        pelaus.getPelialue().taytaRuutu(6, 4);
-        pelaus.getPelialue().taytaRuutu(6, 9);
-        nelio.pyori();
-        nelio.pyori();
-        nelio.pyori();
-        nelio.pyori();
-        nelio.putoa();
+        for (int i = 0; i < 300; i++) {
+            pelaus.getPalikka().putoa();
+            pelaus.vaihdetaankoPalikka();
+        }
 
         for (int y = 0; y <= 23; y++) {
             if (y < 10) {
@@ -63,7 +51,6 @@ public class Main {
         }
 
         System.out.println();
-        System.out.println(nelio.toString());
 
     }
 

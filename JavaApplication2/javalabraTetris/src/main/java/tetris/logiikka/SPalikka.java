@@ -23,7 +23,7 @@ public class SPalikka extends Palikka {
      * @param pelialue Pelialueena toimiva ruudukko.
      */
     public SPalikka(Ruudukko pelialue) {
-        super(new Pala(3, 3), new Pala(3, 3), new Pala(2, 3), new Pala(2, 4), pelialue);
+        super(new Pala(3, 3), new Pala(3, 4), new Pala(2, 4), new Pala(2, 5), pelialue);
         this.asento = 1;
     }
 

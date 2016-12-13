@@ -23,7 +23,7 @@ public class ZPalikka extends Palikka {
      * @param pelialue Pelialueena toimiva ruudukko.
      */
     public ZPalikka(Ruudukko pelialue) {
-        super(new Pala(3, 3), new Pala(3, 3), new Pala(2, 3), new Pala(2, 4), pelialue);
+        super(new Pala(2, 3), new Pala(2, 4), new Pala(3, 4), new Pala(3, 5), pelialue);
         this.asento = 1;
     }
 
