@@ -19,7 +19,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Peli pelaus = new Peli();        // testikoodia
+        Peli pelaus = new Peli();
         pelaus.peliPyorinta();
 
         for (int y = 0; y <= 23; y++) {

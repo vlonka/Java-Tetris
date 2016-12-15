@@ -31,6 +31,8 @@ public class NappaimistonKuuntelija implements KeyListener {
             peli.getPalikka().liikuOikealle();
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
             peli.getPalikka().pyori();
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            peli.getPalikka().putoa();
         }
         
         
