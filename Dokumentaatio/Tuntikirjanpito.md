@@ -14,4 +14,6 @@ Päivä | Tunnit | Kuvaus
 8.12.2016 | 2h | Koodausta.
 9.12.2016 | 3h | Viikkopalautukset, ruudun tuijottamista paljon enemmän.
 13.12.2016 | 8h | UI, pelilooppi.
+15.12.2016 | 2h | Viimeistelyä, tetriksen "testausta."
+1612.2016 | 5h | Viimeistelyä, javadoc, testit jne.
 ... | ... | ...
