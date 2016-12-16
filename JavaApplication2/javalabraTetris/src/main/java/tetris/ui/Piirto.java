@@ -13,7 +13,8 @@ import tetris.logiikka.Peli;
 import tetris.logiikka.Ruudukko;
 
 /**
- *
+ * Käyttöliittymän ikkuna. kai.
+ * 
  * @author vlonka
  */
 public class Piirto extends JFrame implements Runnable {
@@ -21,11 +22,20 @@ public class Piirto extends JFrame implements Runnable {
     private Ruudukko ruudukko;
     private Peli peli;
 
+    /**
+     * Konstruktori.
+     * 
+     * @param ruudukko Pelin ruudukko.
+     * @param peli Peli itse.
+     */
     public Piirto(Ruudukko ruudukko, Peli peli) {
         this.ruudukko = ruudukko;
         this.peli = peli;
     }
 
+    /**
+     * Luo peli-ikkunan.
+     */
     @Override
     public void run() {
         new JFrame("Tetris");

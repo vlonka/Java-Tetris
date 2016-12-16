@@ -9,12 +9,17 @@ import javax.swing.SwingUtilities;
 import tetris.ui.Piirto;
 
 /**
- *
+ * Main. Lähtee pyörittämään peliä ja lopuksi printtaa tilanteen ja pisteet.
+ * Kaksi jälkimmäistä toimintoa eivät ole kriittisiä mutta tilanteen printtaus oli 
+ * avuksi testauksessa.
+ * 
  * @author vlonka
  */
 public class Main {
 
     /**
+     * Sama kuin yllä.
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {

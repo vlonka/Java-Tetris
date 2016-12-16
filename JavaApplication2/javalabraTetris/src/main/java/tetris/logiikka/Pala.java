@@ -17,7 +17,7 @@ public class Pala {
     private Ruudukko ruudut;
     
     /**
-     * Konstruktori
+     * Konstruktori.
      * 
      * @param korkeus palan koordinaatti alussa.
      * @param leveys palan koordinaatti alussa.

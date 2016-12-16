@@ -23,6 +23,12 @@ public abstract class Palikka {
 
     /**
      * Konstruktori.
+     * 
+     * @param pala0 Yksi palikan paloista.
+     * @param pala1 Yksi palikan paloista.
+     * @param pala2 Yksi palikan paloista.
+     * @param pala3 Yksi palikan paloista.
+     * @param pelialue Ruudukko jossa palikka niinsanotusti liikkuu.
      */
     public Palikka(Pala pala0, Pala pala1, Pala pala2, Pala pala3, Ruudukko pelialue) {
         this.pala0 = pala0;
@@ -154,6 +160,8 @@ public abstract class Palikka {
      * @param pala Palikan pala jota käydään läpi
      *
      * @see tetris.logiikka.Ruudukko#onkoTaynna(int, int)
+     * 
+     * @return Jos pala voi pudota niin true, jos ei niin false.
      */
     public boolean voikoPudota(Pala pala) {
         int y = pala.getKorkeus();

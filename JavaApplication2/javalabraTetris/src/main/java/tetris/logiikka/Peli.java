@@ -5,6 +5,13 @@
  */
 package tetris.logiikka;
 
+import tetris.palikat.ZPalikka;
+import tetris.palikat.OPalikka;
+import tetris.palikat.JPalikka;
+import tetris.palikat.SPalikka;
+import tetris.palikat.LPalikka;
+import tetris.palikat.IPalikka;
+import tetris.palikat.TPalikka;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,6 +38,9 @@ public class Peli {
         this.pelialue = new Ruudukko();
     }
 
+    /**
+     * Metodi luo uuden palikan peliin.
+     */
     public void luoPalikka() {
         int nro = arpa.nextInt(7);
 
@@ -53,6 +63,11 @@ public class Peli {
         palikat.add(kayttoPalikka);
     }
 
+    /**
+     * Metodi tarkastaa pitääkö palikka korvata uudella.
+     * 
+     * @see tetris.logiikka.Peli#luoPalikka()
+     */
     public void vaihdetaankoPalikka() {
         if (kayttoPalikka.getKorvattava()) {
             luoPalikka();
@@ -71,6 +86,19 @@ public class Peli {
         return palikat;
     }
 
+    /**
+     * Pelilooppi. Luo pelin, pudottaa palikan 1000 millisekunnin jälkeen ja tarkastaa onko taysiä
+     * rivejä ja pitääkö tehdä jatkotoimenpiteitä.
+     * 
+     * @see tetris.logiikka.Peli#luoPalikka()
+     * @see tetris.logiikka.Peli#vaihdetaankoPalikka()
+     * @see tetris.logiikka.Ruudukko#pudotaRuudut(int)
+     * @see tetris.logiikka.Ruudukko#onkoRiviTaynna(int)
+     * @see tetris.logiikka.Ruudukko#onkoHavitty()
+     * @see System#currentTimeMillis() 
+     * @see tetris.logiikka.Palikka#putoa() 
+     * @see tetris.ui.Piirto#repaint() 
+     */
     public void peliPyorinta() {
         pisteet = 0;
         luoPalikka();

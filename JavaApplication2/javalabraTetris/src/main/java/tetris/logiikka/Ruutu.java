@@ -13,6 +13,9 @@ package tetris.logiikka;
 public class Ruutu {
 
 
+    /**
+     * Konstruktori. tyhjää täynnä, olemassa laajennusmahdollisuuksien vuoksi.
+     */
     public Ruutu() {
 
     }
