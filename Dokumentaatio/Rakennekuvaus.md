@@ -9,3 +9,5 @@ on ```Vektori```-luokan olioita jotka kertovat yksittäisten palojen liikkumissu
 palojen paikkaa, palika ei siis sinänsä pyöri mitenkään.
 
 Luokan ```Peli``` on tarkoitus sitoa ```Palikka``` ja ```Ruudukko``` toisiinsa ja pyörittää koko hommaa.
+
+Käyttöliittymän luokat hakevat tietonsa luokista ```Peli``` ja ```Ruudukko```.
