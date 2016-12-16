@@ -4,4 +4,6 @@ Perusmallinen Tetris-peli, tarkoituksena täyttää rivit palikoilla, jolloin ni
 
 * Liikuta palikkaa oikealle ja vasemmalle näihin suuntiin osoittavilla nuolinäppäimillä.
 * Pyöritä palikkaa ylöspäin osoittavalla nuolinäppäimellä.
-* Liikuta palikkaa alaspäin alas osoittavall nuolinäppäimellä.
+* Liikuta palikkaa alaspäin alas osoittavalla nuolinäppäimellä.
+
+* Peli hävitessä saadut pisteet tulostetaan, jos ohjelma on käynnistetty netbeansissa. Pisteitä saa poistetuista riveistä.
